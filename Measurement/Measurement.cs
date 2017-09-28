@@ -280,6 +280,27 @@ namespace Measurement
             base(typeof(double), description, TypeMeasurement.Flow, (int)unit, multiplier) { }
     }
 
+    public class TempValue : ValueMeasurement {
+        public TempValue(double value, string description, uTemp unit, Multiplier multiplier) : 
+            base(value, description, TypeMeasurement.Temp, (int)unit, multiplier) { }
+        public TempValue(string description, uTemp unit, Multiplier multiplier) :
+            base(typeof(double), description, TypeMeasurement.Temp, (int)unit, multiplier) { }
+    }
+
+    public class PlanimetricValue : ValueMeasurement {
+        public PlanimetricValue(double value, string description, uPlanimetric unit, Multiplier multiplier) :
+            base(value, description, TypeMeasurement.Planimetric, (int)unit, multiplier) { }
+        public PlanimetricValue(string description, uPlanimetric unit, Multiplier multiplier) :
+            base(typeof(double), description, TypeMeasurement.Planimetric, (int)unit, multiplier) { }
+    }
+
+    public class TimeValue : ValueMeasurement {
+        public TimeValue(double value, string description, uTime unit, Multiplier multiplier) :
+            base(value, description, TypeMeasurement.Time, (int)unit, multiplier) { }
+        public TimeValue(string description, uTime unit, Multiplier multiplier) :
+            base(typeof(double), description, TypeMeasurement.Time, (int)unit, multiplier) { }
+    }
+
     #endregion
 
     #region DBValue - Параметр измерения с показанием значения с привязанный к полю таблицы  
@@ -335,5 +356,21 @@ namespace Measurement
     }
 
     #endregion
+    /// <summary>
+    /// Набор данных параметра учета энергоресурса
+    /// </summary>
+    public class EnergyValueEntity {
+        public string name { get; set; }
+        public FlowValue flow { get; set; }
+        public TempValue avg_temp { get; set; }
+        public PressureValue avg_pressure { get; set; }
+        public PlanimetricValue planimetric { get; set; }
+        public FlowValue pr_flow { get; set; }
+        public TimeValue time_norm { get; set; }
+        public TimeValue time_max { get; set; }
+        public EnergyValueEntity() { 
+        
+        }
+    }
 
 }

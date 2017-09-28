@@ -14,6 +14,7 @@ namespace Measurement
     public class DataMeasurement<T>
     {
         private List<T> listdata = new List<T>();
+        public List<T> ListData { get { return this.listdata; } }
         /// <summary>
         /// 
         /// </summary>
