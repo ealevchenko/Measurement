@@ -14,9 +14,14 @@ namespace Measurement
     public class DataMeasurement<T>
     {
         private List<T> listdata = new List<T>();
-
+        /// <summary>
+        /// 
+        /// </summary>
         public DataMeasurement() {}        
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
         public DataMeasurement(object data) {
             if (data is IEnumerable)
             {
@@ -27,7 +32,11 @@ namespace Measurement
             } else 
                 listdata.Add((T)Convert(data));      
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public virtual T Convert(object obj) {
 
             return default(T);
