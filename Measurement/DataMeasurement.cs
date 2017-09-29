@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -44,24 +45,4 @@ namespace Measurement
         }
     }
 
-    //public class DBDataMeasurement<T>
-    //{
-    //    protected List<DBUnitMeasurement> listunion = new List<DBUnitMeasurement>();
-    //    protected List<T> list = new List<T>();
-    //    protected List<DBValueMeasurement> list = new List<DBValueMeasurement>();
-    //    public DBDataMeasurement(T obj)
-    //    {
-
-    //    }
-
-    //}
-
-    //public class DBDataValueMeasurement<T> {
-
-    //    private Type type;
-    //    private object data;
-    //    public DBDataValueMeasurement(T objdata, Type obj) { 
-        
-    //    }
-    //}
 }
