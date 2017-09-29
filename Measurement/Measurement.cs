@@ -295,10 +295,10 @@ namespace Measurement
     }
 
     public class TimeValue : ValueMeasurement {
-        public TimeValue(double value, string description, uTime unit, Multiplier multiplier) :
+        public TimeValue(int value, string description, uTime unit, Multiplier multiplier) :
             base(value, description, TypeMeasurement.Time, (int)unit, multiplier) { }
         public TimeValue(string description, uTime unit, Multiplier multiplier) :
-            base(typeof(double), description, TypeMeasurement.Time, (int)unit, multiplier) { }
+            base(typeof(int), description, TypeMeasurement.Time, (int)unit, multiplier) { }
     }
 
     #endregion
@@ -356,21 +356,4 @@ namespace Measurement
     }
 
     #endregion
-    /// <summary>
-    /// Набор данных параметра учета энергоресурса
-    /// </summary>
-    public class EnergyValueEntity {
-        public string name { get; set; }
-        public FlowValue flow { get; set; }
-        public TempValue avg_temp { get; set; }
-        public PressureValue avg_pressure { get; set; }
-        public PlanimetricValue planimetric { get; set; }
-        public FlowValue pr_flow { get; set; }
-        public TimeValue time_norm { get; set; }
-        public TimeValue time_max { get; set; }
-        public EnergyValueEntity() { 
-        
-        }
-    }
-
 }
