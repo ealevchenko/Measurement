@@ -73,7 +73,7 @@ namespace Measurement
         {
             get
             {
-                throw new NotImplementedException();
+                return this.type;
             }
             set
             {
@@ -85,7 +85,7 @@ namespace Measurement
         {
             get
             {
-                throw new NotImplementedException();
+                return this.multiplier;
             }
             set
             {
@@ -97,7 +97,18 @@ namespace Measurement
         {
             get
             {
-                throw new NotImplementedException();
+                switch (type)
+                {
+                    case TypeMeasurement.Calorific: return (uСalorific)unit;   
+                    case TypeMeasurement.Density: return (uDensity)unit;                 
+                    case TypeMeasurement.Flow: return (uFlow)unit;
+                    case TypeMeasurement.Gas: return (uGas)unit;
+                    case TypeMeasurement.Planimetric: return (uPlanimetric)unit;
+                    case TypeMeasurement.Pressure: return (uPressure)unit;
+                    case TypeMeasurement.Temp: return (uTemp)unit;
+                    case TypeMeasurement.Time: return (uTime)unit;
+                    default: return this.unit;
+                }
             }
             set
             {

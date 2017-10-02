@@ -10,13 +10,13 @@ namespace Measurement
 
     public enum groupEnergy : int
     {
-        Natur_gas = 1,
-        Blast_furnace_gas,
-        Blast,
-        Steam,
-        Nitrogen,
-        Compressed_Air,
-        Oxygen
+        natur_gas = 1,
+        blast_furnace_gas,
+        blast,
+        steam,
+        nitrogen,
+        compressed_air,
+        oxygen
     }
 
     /// <summary>
