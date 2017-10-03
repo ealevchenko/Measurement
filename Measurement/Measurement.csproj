@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataMeasurement.cs" />
-    <Compile Include="EnergyEntity.cs" />
     <Compile Include="Measurement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
