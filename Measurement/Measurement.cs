@@ -11,6 +11,7 @@ namespace Measurement
 
     public enum uPressure : int
     {
+        not = -1,
         yPa = 0, zPa, aPa, fPa, pPa, nPa, µPa, mPa, cPa, dPa, Pa, daPa, hPa, kPa, MPa, GPa, TPa, PPa, EPa, ZPa, YPa,
         bar = 30, mBar,
         g_mm2 = 40, g_sm2, g_m2, kg_mm2, kg_sm2, kg_m2, t_mm2, t_sm2, t_m2,
@@ -34,24 +35,36 @@ namespace Measurement
     // перечни расходов
     public enum uFlow : int
     {
+        not = -1,
         mm3_sec = 0, sm3_sec, m3_sec, ml_sec, l_sec, mm3_min, sm3_min, m3_min, ml_min, l_min,
         mm3_hour, sm3_hour, m3_hour, ml_hour, l_hour, mm3_sutki, sm3_sutki, m3_sutki, ml_sutki, l_sutki,
         mg_sec = 30, g_sec, kg_sec, ton_sec, mg_min, g_min, kg_min, ton_min,
         mg_hour, g_hour, kg_hour, ton_hour, mg_sutki, g_sutki, kg_sutki, ton_sutki
     }
     // перечни температур
-    public enum uTemp : int { grad_C, grad_F, grad_K }
+    public enum uTemp : int { not = -1, grad_C=0, grad_F, grad_K }
     // перечни планомитрических чисел    
-    public enum uPlanimetric : int { Nk, Nl, Np }
+    public enum uPlanimetric : int { not = -1, Nk=0, Nl, Np }
     // перечни времени  
-    public enum uTime : int { sec, min, hour, sutki }
+    public enum uTime : int { not = -1, sec=0, min, hour, sutki }
     // перечни газовый анализ
-    public enum uGas : int { percent, mg_m3, g_m3, mol_dm3, mm3_m3, sm3_m3, dm3_m3 }
+    public enum uGas : int { not = -1, percent=0, mg_m3, g_m3, mol_dm3, mm3_m3, sm3_m3, dm3_m3 }
     // перечни калорийность
-    public enum uСalorific : int { cal, kcal_m3 }
+    public enum uСalorific : int { not = -1, cal=0, kcal_m3 }
     // перечень плотность
-    public enum uDensity : int { mg_mm3, g_mm3, kg_mm3, mg_sm3, g_sm3, kg_sm3, mg_m3, g_m3, kg_m3, mg_l, g_l, kg_l }
+    public enum uDensity : int { not = -1, mg_mm3=0, g_mm3, kg_mm3, mg_sm3, g_sm3, kg_sm3, mg_m3, g_m3, kg_m3, mg_l, g_l, kg_l }
     
+    //TODO: Доработать сообщение об ошибках
+    public class ValueError
+    {
+        public string error {get;set;}
+        public int num {get;set;}
+        public ValueError(string error, int num) {
+            this.error = error;
+            this.num = num;
+        }
+    }
+
     #region UNION - Параметр измерения
     /// <summary>
     /// Интерфейс описания параметра измерения
@@ -214,17 +227,21 @@ namespace Measurement
             get
             {
                 if (this.typevalue == typeof(Double)){
-                    return Double.Parse(this.value);
+                    return !String.IsNullOrWhiteSpace(this.value)? Double.Parse(this.value):(double?)null;
                 }
                 if (this.typevalue == typeof(int)){
-                    return int.Parse(this.value);
+                    return !String.IsNullOrWhiteSpace(this.value)? int.Parse(this.value):(int?)null;
                 }
                 if (this.typevalue == typeof(string)){
                     return this.value;
                 }
                 if (this.typevalue == typeof(DateTime))
                 {
-                    return DateTime.Parse(this.value);
+                    return !String.IsNullOrWhiteSpace(this.value) ? DateTime.Parse(this.value) : (DateTime?)null;
+                }
+                if (this.typevalue == typeof(ValueError))
+                {
+                    return "error";
                 }
                 return null;
             }
@@ -245,22 +262,28 @@ namespace Measurement
                 throw new NotImplementedException();
             }
         }
+        public ValueMeasurement(ValueError error, string description, TypeMeasurement type, int unit, Multiplier multiplier)
+            : base(description, type, unit, multiplier)
+        {
+            this.value = "error";
+            this.typevalue = typeof(ValueError);
+        }
         public ValueMeasurement(Type typevalue, string description, TypeMeasurement type, int unit, Multiplier multiplier)
             : base(description, type, unit, multiplier)
         {
             this.value = null;
             this.typevalue = typevalue;
         }
-        public ValueMeasurement(double value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
+        public ValueMeasurement(double? value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
             : base(description, type, unit, multiplier)
         {
-            this.value = value.ToString();
+            this.value = value!=null ? value.ToString() : null;
             this.typevalue = typeof(double);
         }
-        public ValueMeasurement(int value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
+        public ValueMeasurement(int? value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
             : base(description, type, unit, multiplier)
         {
-            this.value = value.ToString();
+            this.value = value != null ? value.ToString() : null;
             this.typevalue = typeof(int);
         }
         public ValueMeasurement(string value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
@@ -269,44 +292,46 @@ namespace Measurement
             this.value = value.ToString();
             this.typevalue = typeof(string);
         }
-        public ValueMeasurement(DateTime value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
+        public ValueMeasurement(DateTime? value, string description, TypeMeasurement type, int unit, Multiplier multiplier)
             : base(description, type, unit, multiplier)
         {
-            this.value = value.ToString();
+            this.value = value != null ? value.ToString() : null;
             this.typevalue = typeof(DateTime);
         }
     }
 
     public class PressureValue : ValueMeasurement {
-        public PressureValue(double value, string description, uPressure unit, Multiplier multiplier) : 
+        public PressureValue(double? value, string description, uPressure unit, Multiplier multiplier) : 
             base(value, description, TypeMeasurement.Pressure, (int)unit, multiplier) { }
         public PressureValue(string description, uPressure unit, Multiplier multiplier) : 
             base(typeof(double), description, TypeMeasurement.Pressure, (int)unit, multiplier) { }
     }
 
     public class FlowValue : ValueMeasurement {
-        public FlowValue(double value, string description, uFlow unit, Multiplier multiplier) : 
+        //public FlowValue(ValueError error, string description, uFlow unit, Multiplier multiplier) :
+        //    base(error, description, TypeMeasurement.Flow, (int)unit, multiplier) { }
+        public FlowValue(double? value, string description, uFlow unit, Multiplier multiplier) : 
             base(value, description, TypeMeasurement.Flow, (int)unit, multiplier) { }
         public FlowValue(string description, uFlow unit, Multiplier multiplier) :
             base(typeof(double), description, TypeMeasurement.Flow, (int)unit, multiplier) { }
     }
 
     public class TempValue : ValueMeasurement {
-        public TempValue(double value, string description, uTemp unit, Multiplier multiplier) : 
+        public TempValue(double? value, string description, uTemp unit, Multiplier multiplier) : 
             base(value, description, TypeMeasurement.Temp, (int)unit, multiplier) { }
         public TempValue(string description, uTemp unit, Multiplier multiplier) :
             base(typeof(double), description, TypeMeasurement.Temp, (int)unit, multiplier) { }
     }
 
     public class PlanimetricValue : ValueMeasurement {
-        public PlanimetricValue(double value, string description, uPlanimetric unit, Multiplier multiplier) :
+        public PlanimetricValue(double? value, string description, uPlanimetric unit, Multiplier multiplier) :
             base(value, description, TypeMeasurement.Planimetric, (int)unit, multiplier) { }
         public PlanimetricValue(string description, uPlanimetric unit, Multiplier multiplier) :
             base(typeof(double), description, TypeMeasurement.Planimetric, (int)unit, multiplier) { }
     }
 
     public class TimeValue : ValueMeasurement {
-        public TimeValue(int value, string description, uTime unit, Multiplier multiplier) :
+        public TimeValue(int? value, string description, uTime unit, Multiplier multiplier) :
             base(value, description, TypeMeasurement.Time, (int)unit, multiplier) { }
         public TimeValue(string description, uTime unit, Multiplier multiplier) :
             base(typeof(int), description, TypeMeasurement.Time, (int)unit, multiplier) { }
