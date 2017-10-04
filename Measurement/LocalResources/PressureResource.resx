@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="at" xml:space="preserve">
+    <value>ат</value>
+    <comment>Техническая атмосфера</comment>
+  </data>
+  <data name="atm" xml:space="preserve">
+    <value>атм</value>
+    <comment>Физическая атмосфера</comment>
+  </data>
+  <data name="attoPa" xml:space="preserve">
+    <value>аПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="bar" xml:space="preserve">
+    <value>Бар</value>
+    <comment>Давление, тяжесть (Бар)</comment>
+  </data>
+  <data name="deciPa" xml:space="preserve">
+    <value>дПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="dekaPa" xml:space="preserve">
+    <value>даПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="EksaPa" xml:space="preserve">
+    <value>ЭПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="femtoPa" xml:space="preserve">
+    <value>фПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="gektoPa" xml:space="preserve">
+    <value>гПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="GigaPa" xml:space="preserve">
+    <value>ГПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="gs_m2" xml:space="preserve">
+    <value>гс/м2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="gs_mm2" xml:space="preserve">
+    <value>гс/мм2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="gs_sm2" xml:space="preserve">
+    <value>гс/см2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="g_m2" xml:space="preserve">
+    <value>г/м2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="g_mm2" xml:space="preserve">
+    <value>г/мм2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="g_sm2" xml:space="preserve">
+    <value>г/см2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="H_m2" xml:space="preserve">
+    <value>H/м2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="H_mm2" xml:space="preserve">
+    <value>H/мм2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="H_sm2" xml:space="preserve">
+    <value>H/см2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="kgs_m2" xml:space="preserve">
+    <value>кгс/м2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="kgs_mm2" xml:space="preserve">
+    <value>кгс/мм2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="kgs_sm2" xml:space="preserve">
+    <value>кгс/см2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="kg_m2" xml:space="preserve">
+    <value>кг/м2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="kg_mm2" xml:space="preserve">
+    <value>кг/мм2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="kg_sm2" xml:space="preserve">
+    <value>кг/см2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="KH_m2" xml:space="preserve">
+    <value>KH/м2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="KH_mm2" xml:space="preserve">
+    <value>KH/мм2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="KH_sm2" xml:space="preserve">
+    <value>KH/см2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="kiloPa" xml:space="preserve">
+    <value>кПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="mBar" xml:space="preserve">
+    <value>мБар</value>
+    <comment>Давление, тяжесть (Бар)</comment>
+  </data>
+  <data name="MegaPa" xml:space="preserve">
+    <value>МПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="MH_m2" xml:space="preserve">
+    <value>MH/м2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="MH_mm2" xml:space="preserve">
+    <value>MH/мм2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="MH_sm2" xml:space="preserve">
+    <value>MH/см2</value>
+    <comment>Давление, механического напряжения (H/m2)</comment>
+  </data>
+  <data name="mikroPa" xml:space="preserve">
+    <value>мкПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="miliPa" xml:space="preserve">
+    <value>мПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="mm_H2O" xml:space="preserve">
+    <value>ммвод.ст.</value>
+    <comment>Метр водяного столба</comment>
+  </data>
+  <data name="mm_Hg" xml:space="preserve">
+    <value>ммрт.ст.</value>
+    <comment>Миллиметр ртутного столба</comment>
+  </data>
+  <data name="m_H2O" xml:space="preserve">
+    <value>мвод.ст</value>
+    <comment>Метр водяного столба</comment>
+  </data>
+  <data name="m_Hg" xml:space="preserve">
+    <value>мрт.ст.</value>
+    <comment>Миллиметр ртутного столба</comment>
+  </data>
+  <data name="nanoPa" xml:space="preserve">
+    <value>нПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="not" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Pa" xml:space="preserve">
+    <value>Па</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="PetaPa" xml:space="preserve">
+    <value>ППа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="pikoPa" xml:space="preserve">
+    <value>пПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="santiPa" xml:space="preserve">
+    <value>сПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="sm_H2O" xml:space="preserve">
+    <value>смвод.ст.</value>
+    <comment>Метр водяного столба</comment>
+  </data>
+  <data name="sm_Hg" xml:space="preserve">
+    <value>смрт.ст.</value>
+    <comment>Миллиметр ртутного столба</comment>
+  </data>
+  <data name="TeraPa" xml:space="preserve">
+    <value>ТПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="ts_m2" xml:space="preserve">
+    <value>тс/м2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="ts_mm2" xml:space="preserve">
+    <value>тс/мм2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="ts_sm2" xml:space="preserve">
+    <value>тс/см2</value>
+    <comment>Давление, механического напряжения (кгс./см2)</comment>
+  </data>
+  <data name="t_m2" xml:space="preserve">
+    <value>т/м2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="t_mm2" xml:space="preserve">
+    <value>т/мм2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="t_sm2" xml:space="preserve">
+    <value>т/см2</value>
+    <comment>Давление, механического напряжения (кг./см2)</comment>
+  </data>
+  <data name="yoktoPa" xml:space="preserve">
+    <value>иПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="YottaPa" xml:space="preserve">
+    <value>ИПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="zeptoPa" xml:space="preserve">
+    <value>зПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+  <data name="ZettaPa" xml:space="preserve">
+    <value>ЗПа</value>
+    <comment>Давление, механическое напряжение (Паскаль)</comment>
+  </data>
+</root>
